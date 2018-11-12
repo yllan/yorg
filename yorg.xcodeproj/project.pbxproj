@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8518AA41219479FB0023E1FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518AA40219479FB0023E1FB /* main.swift */; };
+		8518AA4921947A4B0023E1FB /* YIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518AA4821947A4B0023E1FB /* YIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		8518AA3D219479FB0023E1FB /* yorg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = yorg; sourceTree = BUILT_PRODUCTS_DIR; };
 		8518AA40219479FB0023E1FB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8518AA4821947A4B0023E1FB /* YIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 		8518AA34219479FB0023E1FB = {
 			isa = PBXGroup;
 			children = (
+				8518AA4721947A320023E1FB /* YIKit */,
 				8518AA3F219479FB0023E1FB /* yorg */,
 				8518AA3E219479FB0023E1FB /* Products */,
 			);
@@ -60,6 +63,14 @@
 				8518AA40219479FB0023E1FB /* main.swift */,
 			);
 			path = yorg;
+			sourceTree = "<group>";
+		};
+		8518AA4721947A320023E1FB /* YIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8518AA4821947A4B0023E1FB /* YIApplication.swift */,
+			);
+			path = YIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8518AA4921947A4B0023E1FB /* YIApplication.swift in Sources */,
 				8518AA41219479FB0023E1FB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
