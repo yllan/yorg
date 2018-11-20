@@ -37,13 +37,12 @@ enum Event {
     case ctrl(Int)
 }
 
-var originalTermios: termios = termios()
-
-
 class YIApplication {
     
     let windowSource = DispatchSource.makeSignalSource(signal: SIGWINCH, queue: DispatchQueue.main)
     var eventQueue: [Event] = []
+    var originalTermios: termios = termios()
+    var shouldTerminate: Bool = false
     
     func enableRawMode() {
         let term = UnsafeMutablePointer<termios>.allocate(capacity: 1)
@@ -63,9 +62,6 @@ class YIApplication {
         
         // setup the terminal (turn off echo, etc.)
         enableRawMode()
-        atexit {
-            tcsetattr(STDIN_FILENO, TCSAFLUSH, &originalTermios)
-        }
         
         // make the input non-blocking
         let f = fcntl(STDIN_FILENO, F_GETFL, 0)
@@ -99,12 +95,38 @@ class YIApplication {
     }
     
     func run() {
+        applicationWillLaunch()
+        
         let delta = 1.0 / 60.0
-        while true {
+        while !shouldTerminate {
             RunLoop.main.acceptInput(forMode: RunLoop.Mode.default, before: Date(timeIntervalSinceNow: delta))
+            
+            // process key event
             if let input = receiveKeyEvent() {
-                
+                if input == "q" {
+                    self.terminate()
+                }
             }
+            
+            // TODO: feed event to application
+            
         }
+        
+        // clean up
+        tcsetattr(STDIN_FILENO, TCSAFLUSH, &originalTermios)
+        
+        applicationWillTerminate()
+    }
+    
+    func applicationWillLaunch() {
+        
+    }
+    
+    func applicationWillTerminate() {
+        
+    }
+    
+    func terminate() {
+        self.shouldTerminate = true
     }
 }
