@@ -98,6 +98,9 @@ class YIApplication {
         applicationWillLaunch()
         
         let delta = 1.0 / 60.0
+        output("\u{1b}[2J")
+        output("\u{1b}[H")
+        
         while !shouldTerminate {
             RunLoop.main.acceptInput(forMode: RunLoop.Mode.default, before: Date(timeIntervalSinceNow: delta))
             
@@ -109,13 +112,19 @@ class YIApplication {
             }
             
             // TODO: feed event to application
-            
         }
         
         // clean up
+        output("\u{1b}[2J")
+        output("\u{1b}[H")
         tcsetattr(STDIN_FILENO, TCSAFLUSH, &originalTermios)
         
         applicationWillTerminate()
+    }
+    
+    func output(_ s: String) {
+        write(STDOUT_FILENO, s, s.utf8.count)
+        
     }
     
     func applicationWillLaunch() {

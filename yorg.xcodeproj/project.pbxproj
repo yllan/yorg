@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8518AA41219479FB0023E1FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518AA40219479FB0023E1FB /* main.swift */; };
 		8518AA4921947A4B0023E1FB /* YIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8518AA4821947A4B0023E1FB /* YIApplication.swift */; };
+		85552BC221F84BAE004FA626 /* YIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85552BC121F84BAE004FA626 /* YIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		8518AA3D219479FB0023E1FB /* yorg */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = yorg; sourceTree = BUILT_PRODUCTS_DIR; };
 		8518AA40219479FB0023E1FB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		8518AA4821947A4B0023E1FB /* YIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YIApplication.swift; sourceTree = "<group>"; };
+		85552BC121F84BAE004FA626 /* YIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				8518AA4821947A4B0023E1FB /* YIApplication.swift */,
+				85552BC121F84BAE004FA626 /* YIView.swift */,
 			);
 			path = YIKit;
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8518AA4921947A4B0023E1FB /* YIApplication.swift in Sources */,
+				85552BC221F84BAE004FA626 /* YIView.swift in Sources */,
 				8518AA41219479FB0023E1FB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
